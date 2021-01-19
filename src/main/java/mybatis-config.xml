@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/dbx" />
+                <property name="username" value="root" />
+                <property name="password" value="123456" />
+            </dataSource>
+        </environment>
+    </environments>
+    <!--<configuration>
+        <typeAliases>
+            <typeAlias alias="Integer" type="java.lang.Integer" />
+            <typeAlias alias="Long" type="java.lang.Long" />
+            <typeAlias alias="HashMap" type="java.util.HashMap" />
+            <typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap" />
+            <typeAlias alias="ArrayList" type="java.util.ArrayList" />
+            <typeAlias alias="LinkedList" type="java.util.LinkedList" />
+        </typeAliases>
+    </configuration>-->
+    <mappers>
+        <!--这是告诉Mybatis区哪找持久化类的映射文件，对于在src下的文件直接写文件名，
+            如果在某包下，则要写明路径,如：com/mybatistest/config/User.xml-->
+        <mapper resource="com/cmm/springboottest/mapper.xml"></mapper>
+    </mappers>
+
+</configuration>
